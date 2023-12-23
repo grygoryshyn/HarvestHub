@@ -1,0 +1,208 @@
+<!-- This HTML code re-uses a large part of the code provided by this template resource: https://codepen.io/NielsVoogt/pen/eYBQpPR-->
+
+<!DOCTYPE html>
+<html>
+
+  <!-- Defining meta-parameters of the HTML File and Style via CSS-->
+  <head>
+    <meta charset="UTF-8">
+    <title>HarvestHub</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style_sheet.css">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Q8Zq7dh/Screenshot-2023-12-17-at-07-00-33-removebg-preview.png">
+  </head>
+
+  <style>
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3e3063;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+    transition: all 0.1s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.1s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.1s;
+  }
+
+  .button:hover span {
+    padding-right: 15px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .italic {
+  font-style: italic;
+  }
+
+  .small {
+  font-size: x-small;
+  color: #d2e5f5;
+  }
+
+</style>
+
+  <style>
+  body {
+    background-image: url('https://i.ibb.co/4pV4hZv/Screenshot-2023-12-17-at-08-21-58.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+
+  <body>
+    <!-- Starting the body of the HTML with a navigation section for the left hand side of the website -->
+    <div class="demo-page">
+      <div class="demo-page-navigation">
+        <nav>
+          <ul>
+            <li>
+              <a href="#intro">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor"
+                  class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 
+                        1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 
+                        1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 
+                        0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                </svg>
+                About HarvestHub</a>
+            </li>
+            <li>
+              <a href="#model-block">
+                <img src="https://pic.onlinewebfonts.com/svg/img_134599.png"
+                  width="20" height="15"></img>
+              &nbsp &nbsp Crop Data Analysis</a>
+          </li>
+          <li>
+            <a href="#mailing">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+                viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-feather">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                <line x1="16" y1="8" x2="2" y2="22" />
+                <line x1="17.5" y1="15" x2="9" y2="15" />
+              </svg>
+              Newsletter Sign up</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Creating the second section of HTML's body of the HTML relating to the background and general information about the platform+website -->
+    <main class="demo-page-content">
+      <section>
+        <div class="href-target" id="intro"></div>
+        <div id="intro_pics">
+          <p class="italic">
+            <img
+              src="https://i.ibb.co/Y7JDQ8z/Screenshot-2023-12-17-at-07-03-37-removebg.png"
+              alt width=300>
+            &nbsp Powered by <strong>Rabobank</strong>
+          </p>
+        </div>
+        <p>
+          HarvestHub is a crop management system that monitors, controls, and
+          advises
+          on various farm operations in real-time by applying IoT and AI
+          technology.
+          Using data collected from sensors, the program tracks various metrics
+          such as
+          soil type, moisture, pH level, temperature, radiation, nutrients, as
+          well as, external surroundings
+          including rain and wind levels to advise you on what steps
+          you should take next to maximise
+          crop yield.
+          The aim of the program is to make technology-driven agriculture accessible for anybody who desires it.
+        </p>
+        <strong>How it works</strong>
+        <p class="" style="margin: 7px;"></p>
+        <div style="margin-left: 1em;">
+          <ol type="1">
+            <li>Place sensors around the crop field.</li>
+            <li>
+              Collect data from the sensors with your phone remotely using cellular network or bluetooth via the HarvestHub app.
+            </li>
+            <li>
+              View information on your soil and other factors which can impact yield in real-time along with
+              visualisations on key metrics informing you on crop health.
+              The program automatically analyses the data collected to personally
+              advise you on any steps that migh help you maximise yield in the long-run.
+            </li>
+            </ol>
+        </div>
+      </section>
+
+      <!-- Creating the fourth section of HTML's body of the HTML which is used as a form to collect input data from the user -->
+      <section>
+        <form action="{{ url_for('predict')}}" method="POST" enctype="multipart/form-data">
+          <div class="href-target" id="model-block"></div>
+          <h1>
+            Crop Data Analysis
+          </h1>
+          <p>Please provide a data file collected from the sensors to begin
+            analysis:
+          </p>
+          <fieldset class="nice-form-group">
+            <div class="nice-form-group">
+              <label>Data upload</label>
+              <input type="file" name="file">
+            </div><br>
+          </fieldset>
+          <br>
+          <button type="submit" value="Submit" class="button" style="vertical-align:middle"><span>Analyse
+            </span></button>
+        </form>
+      </section>
+
+      <!-- *Purely Visual* Creating the fifth and final section of HTML's body of the HTML which is used for customers to sign up for newsletters from HarvestHub *Purely Visual* -->
+      <section>
+        <div class="href-target" id="mailing"></div>
+        <h1>
+          <svg viewBox="0 0 8 6" xmlns="http://www.w3.org/2000/svg">
+            <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z" />
+          </svg>
+          Newsletter Signup
+        </h1>
+        <p>
+          Sign up to HarvestHub's monthly E-Mail newsletter updating users on
+          the development of the platform and about
+          upcoming events.
+        </p>
+
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value required />
+          <input type="submit">
+        </div>
+      </section>
+      <footer>
+        HarvestHub- powered by Rabobank
+      </footer>
+    </main>
+  </div>

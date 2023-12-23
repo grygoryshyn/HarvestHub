@@ -1,0 +1,509 @@
+<!-- This HTML code re-uses a large part of the code provided by this template resource: https://codepen.io/NielsVoogt/pen/eYBQpPR-->
+
+<!DOCTYPE html>
+<html>
+
+  <!-- Defining meta-parameters of the HTML File and Style via CSS-->
+  <head>
+    <meta charset="UTF-8">
+    <title>HarvestHub</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style_sheet_analysis.css">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Q8Zq7dh/Screenshot-2023-12-17-at-07-00-33-removebg-preview.png">
+    <script type="text/javascript" src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/graphics.js"></script> -->
+  </head>
+
+  <style type="text/css">      
+    html, body, #container { 
+      width: 100%; height: 100%; margin: 0; padding: 0; 
+    } 
+  </style>
+
+  <style>
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #50036f;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+    transition: all 0.1s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.1s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.1s;
+  }
+
+  .button:hover span {
+    padding-right: 15px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .italic {
+  font-style: italic;
+  }
+
+  .small {
+  font-size: x-small;
+  color: #d2e5f5;
+  }
+
+  .small_2 {
+  font-size: x-small;
+  color: #191d20;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+
+
+</style>
+
+  <style>
+  body {
+    background-image: url('https://i.ibb.co/4pV4hZv/Screenshot-2023-12-17-at-08-21-58.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+
+  <body>
+    <!-- Starting the body of the HTML with a navigation section for the left hand side of the website -->
+    <div class="demo-page">
+      <div class="demo-page-navigation">
+        <nav>
+          <ul>
+            <li>
+              <a href=http://127.0.0.1:5000>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                  <defs>
+                  </defs>
+                  <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <path d="M 24.316 44.248 l 16.193 -15.342 c 0.66 -0.625 1.748 -0.157 1.748 0.752 v 7.873 c 0 0.572 0.464 1.036 1.036 1.036 h 22.149 c 0.572 0 1.036 0.464 1.036 1.036 v 10.795 c 0 0.572 -0.464 1.036 -1.036 1.036 H 43.293 c -0.572 0 -1.036 0.464 -1.036 1.036 v 7.873 c 0 0.909 -1.088 1.377 -1.748 0.752 L 24.316 45.752 C 23.885 45.343 23.885 44.657 24.316 44.248 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 45 90 c 24.813 0 45 -20.187 45 -45 C 90 20.187 69.813 0 45 0 C 20.187 0 0 20.187 0 45 C 0 69.813 20.187 90 45 90 z M 45 8 c 20.402 0 37 16.598 37 37 c 0 20.402 -16.598 37 -37 37 C 24.598 82 8 65.402 8 45 C 8 24.598 24.598 8 45 8 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  </g>
+                  </svg>
+                Return To Homepage
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    <!-- Creating the second section of HTML's body of the HTML relating to the background and general information about the platform+website -->
+    <main class="demo-page-content">
+      <section>
+        <div class="href-target" id="intro"></div>
+        <div id="intro_pics">
+          <p class="italic">
+            <img
+              src="https://i.ibb.co/Y7JDQ8z/Screenshot-2023-12-17-at-07-03-37-removebg.png"
+              alt width=300>
+            &nbsp Powered by <strong>Rabobank</strong>
+          </p>
+        </div>
+        <div class="href-target" id="preference-field-descriptions"></div>
+      </section>
+
+      <section>
+        <h1>
+          Hydroclimate Information
+        </h1>
+        <br>
+          <p>
+          <h3>9°<br></h3>
+          <h4>Utrecht, The Netherlands <img src="https://icon-library.com/images/ios-location-icon/ios-location-icon-13.jpg" alt="Live Location" style="width:13px;height:13px;"><br></h4>
+          <p class="small_2">
+            Chance of rain:   50%<br>
+            Wind speed:   34km/h<br>
+            Humidity:   83%
+          </p>
+          <h5>Friday | Dec 22, 2023</h5>
+          <p class="" style="margin: 64px;"></p>
+          <strong>Heavy Rain:</strong> Low Risk<p class="" style="margin: 14px;"></p>
+          <strong>Strong Wind:</strong> Moderate-High Risk (<a href="https://www.knmi.nl/nederland-nu/weer/waarschuwingen/utrecht/">Code Yellow</a>)<p class="" style="margin: 14px;"></p>
+          <strong>Drought:</strong> Extremely Low Risk<p class="" style="margin: 14px;"></p>
+          <strong>Salt intrusion:</strong> Extremely Low Risk<p class="" style="margin: 14px;"></p>
+          <strong>Heatwave:</strong> Extremely Low Risk<p class="" style="margin: 14px;"></p>
+        </p>
+      </section>
+
+      <section>
+        <h1>
+          Soil pH Level Analysis
+        </h1>
+        <br>
+        <div class="grid">
+          <div class={{ ph1_class }}>
+            <p><br>{{ ph1 }}
+            <br>
+            <span class="small">Sensor 1</span></p>
+          </div>
+          <div class={{ ph2_class }}>
+            <p><br>{{ ph2 }}
+            <br>
+            <span class="small">Sensor 2</span></p>
+            </div>
+          <div class={{ ph3_class }}>
+            <p><br>{{ ph3 }}
+            <br>
+            <span class="small">Sensor 3</span></p>
+            </div>
+          <div class={{ ph4_class }}>
+            <p><br>{{ ph4 }}
+            <br>
+            <span class="small">Sensor 4</span></p>
+            </div>
+          <div class={{ ph5_class }}>
+            <p><br>{{ ph5 }}
+            <br>
+            <span class="small">Sensor 5</span></p>
+          </div>
+          <div class={{ ph6_class }}>
+            <p><br>{{ ph6 }}
+            <br>
+            <span class="small">Sensor 6</span></p>
+          </div>
+          <div class={{ ph7_class }}>
+            <p><br>{{ ph7 }}
+            <br>
+            <span class="small">Sensor 7</span></p>
+          </div>
+          <div class={{ ph8_class }}>
+            <p><br>{{ ph8 }}
+            <br>
+            <span class="small">Sensor 8</span></p>
+          </div>
+          <div class={{ ph9_class }}>
+            <p><br>{{ ph9 }}
+            <br>
+            <span class="small">Sensor 9</span></p>
+          </div>
+          <div class={{ ph10_class }}>
+            <p><br>{{ ph10 }}
+            <br>
+            <span class="small">Sensor 10</span></p>
+          </div>
+          <div class={{ ph11_class }}>
+            <p><br>{{ ph11 }}
+            <br>
+            <span class="small">Sensor 11</span></p>
+          </div>
+          <div class={{ ph12_class }}>
+            <p><br>{{ ph12 }}
+            <br>
+            <span class="small">Sensor 12</span></p>
+          </div>
+          <div class={{ ph13_class }}>
+            <p><br>{{ ph13 }}
+            <br>
+            <span class="small">Sensor 13</span></p>
+          </div>
+          <div class={{ ph14_class }}>
+            <p><br>{{ ph14 }}
+            <br>
+            <span class="small">Sensor 14</span></p>
+          </div>
+          <div class={{ ph15_class }}>
+            <p><br>{{ ph15 }}
+            <br>
+            <span class="small">Sensor 15</span></p>
+          </div>
+          <div class={{ ph16_class }}>
+            <p><br>{{ ph16 }}
+            <br>
+            <span class="small">Sensor 16</span></p>
+          </div>
+        </div>
+        <br>
+        <br>
+        <img src="https://i.ibb.co/dJ9NQkd/Screenshot-2023-12-19-at-02-10-26.png" alt width=600>
+        <br>
+        <p>
+          <h2>General Overview</h2>
+          <strong>Overall, the pH levels of your soil are currently sitting at an optimal level with an average pH of {{ ph_avg }}</strong>.
+          The soil pH level is a measure of the acidity or alkalinity of the soil, and it can significantly
+          influence the availability of nutrients to plants. A pH range of 6 to 7 is generally considered optimal for most crops.
+          This level optimises Microbial Activity, Chemical Reactions, and Enzyme Activity whilst minimising risk of Aluminum Toxicity.
+          <br>
+          <br>
+          <h2>Suggestions for Improvement</h2>
+          Whilst the average pH levels are good, the soil areas surrounding <strong>sensor 13 and 14</strong> are currently indicating lower pH levels than the suggested optimal range,
+          indicating acidity in the soil. To increase your chances of optimal crop yield, read <a href="https://kellogggarden.com/blog/soil/how-to-organically-raise-ph-in-soil/">
+          here</a> about ways to organically increase pH levels of your soil.
+        </p>
+      </section>
+
+      <section>
+        <h1>
+          Soil Moisture Level Analysis
+        </h1>
+        <br>
+        <div class="grid">
+          <div class={{ sm1_class }}>
+            <p><br>{{ sm1 }}%
+            <br>
+            <span class="small">Sensor 1</span></p>
+          </div>
+          <div class={{ sm2_class }}>
+            <p><br>{{ sm2 }}%
+            <br>
+            <span class="small">Sensor 2</span></p>
+            </div>
+          <div class={{ sm3_class }}>
+            <p><br>{{ sm3 }}%
+            <br>
+            <span class="small">Sensor 3</span></p>
+            </div>
+          <div class={{ sm4_class }}>
+            <p><br>{{ sm4 }}%
+            <br>
+            <span class="small">Sensor 4</span></p>
+            </div>
+          <div class={{ sm5_class }}>
+            <p><br>{{ sm5 }}%
+            <br>
+            <span class="small">Sensor 5</span></p>
+            </div>
+          <div class={{ sm6_class }}>
+            <p><br>{{ sm6 }}%
+            <br>
+            <span class="small">Sensor 6</span></p>
+            </div>
+          <div class={{ sm7_class }}>
+            <p><br>{{ sm7 }}%
+            <br>
+            <span class="small">Sensor 7</span></p>
+            </div>
+          <div class={{ sm8_class }}>
+            <p><br>{{ sm8 }}%
+            <br>
+            <span class="small">Sensor 8</span></p>
+            </div>
+          <div class={{ sm9_class }}>
+            <p><br>{{ sm9 }}%
+            <br>
+            <span class="small">Sensor 9</span></p>
+            </div>
+          <div class={{ sm10_class }}>
+            <p><br>{{ sm10 }}%
+            <br>
+            <span class="small">Sensor 10</span></p>
+            </div>
+          <div class={{ sm11_class }}>
+            <p><br>{{ sm11 }}%
+            <br>
+            <span class="small">Sensor 11</span></p>
+            </div>
+          <div class={{ sm12_class }}>
+            <p><br>{{ sm12 }}%
+            <br>
+            <span class="small">Sensor 12</span></p>
+            </div>
+          <div class={{ sm13_class }}>
+            <p><br>{{ sm13 }}%
+            <br>
+            <span class="small">Sensor 13</span></p>
+            </div>
+          <div class={{ sm14_class }}>
+            <p><br>{{ sm14 }}%
+            <br>
+            <span class="small">Sensor 14</span></p>
+            </div>
+          <div class={{ sm15_class }}>
+            <p><br>{{ sm15 }}%
+            <br>
+            <span class="small">Sensor 15</span></p>
+            </div>
+          <div class={{ sm16_class }}>
+            <p><br>{{ sm16 }}%
+            <br>
+            <span class="small">Sensor 16</span></p>
+          </div>
+        </div>
+        <br>
+        <img src="https://i.ibb.co/wQM50sV/Screenshot-2023-12-19-at-01-33-06.png" alt width=600>
+        <br>
+        <p>
+          <h2>General Overview</h2>
+          <strong>Overall, the general moisture levels of your soil are currently sitting at an acceptable level with an average moisture level
+          of {{ sm_avg }}%</strong>.
+          Soil moisture is a critical factor for plant growth, and maintaining an optimal range, typically between 40% and 60%, is
+          critical for retaining optimal crop yield. With this level of moisture several vital activities such as Nutrient Uptake,
+          Photosynthesis, Cell Expansion, Respiration, Disease Prevention, and Temperature Regulation. Inconsistent or inadequate
+          moisture can lead to poor seed germination and seedling, which can ultiamtely negatively impact crop yield.
+          <br>
+          <br>
+          <h2>Suggestions for Improvement</h2>
+          Although the average moisture levels are good, the soil areas surrounding <strong>sensor 9, 14, 15, and especially 13</strong> are
+          currently demonstrating higher water moisture levels than suggested. On the other hand, the soil area around <strong>sensor 4</strong> is demonstrating
+          slighly lower moisture levels than suggested. For help regarding maintanance of soild moisture levels, read <a href="https://soilscout.com/blog/how-to-optimize-soil-moisture-for-best-crop-productivity">
+          here</a> about different ways to deal with soil moisture.
+        </p>
+      </section>
+
+      <section>
+        <h1>
+          Soil Temperature
+        </h1>
+        <div id="container" style="height: 450px; width: 600px"></div>
+        <script>
+          anychart.onDocumentReady(function () {
+                  
+          // add data
+          var data = [
+            ["01:00", {{ t_minus23 }}, 10, 24],
+            ["02:00", {{ t_minus22 }}, 10, 24],
+            ["03:00", {{ t_minus21 }}, 10, 24],
+            ["04:00", {{ t_minus20 }}, 10, 24],
+            ["05:00", {{ t_minus19 }}, 10, 24],
+            ["06:00", {{ t_minus18 }}, 10, 24],
+            ["07:00", {{ t_minus17 }}, 10, 24],
+            ["08:00", {{ t_minus16 }}, 10, 24],
+            ["09:00", {{ t_minus15 }}, 10, 24],
+            ["10:00", {{ t_minus14 }}, 10, 24],
+            ["11:00", {{ t_minus13 }}, 10, 24],
+            ["12:00", {{ t_minus12 }}, 10, 24],
+            ["13:00", {{ t_minus11 }}, 10, 24],
+            ["14:00", {{ t_minus10 }}, 10, 24],
+            ["15:00", {{ t_minus9 }}, 10, 24],
+            ["16:00", {{ t_minus8 }}, 10, 24],
+            ["17:00", {{ t_minus7 }}, 10, 24],
+            ["18:00", {{ t_minus6 }}, 10, 24],
+            ["19:00", {{ t_minus5 }}, 10, 24],
+            ["20:00", {{ t_minus4 }}, 10, 24],
+            ["21:00", {{ t_minus3 }}, 10, 24],
+            ["22:00", {{ t_minus2 }}, 10, 24],
+            ["23:00", {{ t_minus1 }}, 10, 24],
+            ["00:00", {{ t_minus0 }}, 10, 24]
+          ];
+                  
+          // create a data set
+          var dataSet = anychart.data.set(data);
+                  
+          // map the data for all series
+          var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
+          var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
+          var thirdSeriesData = dataSet.mapAs({x: 0, value: 3});
+                  
+          // create a line chart
+          var chart = anychart.line();
+
+          chart.height(450);
+                  
+          // create the series and name them
+          var firstSeries = chart.line(firstSeriesData);
+          firstSeries.name("Soil Temperature");
+          var secondSeries = chart.line(secondSeriesData);
+          secondSeries.name("Suggested Minimal Temperature");
+          var thirdSeriesData = chart.line(thirdSeriesData);
+          thirdSeriesData.name("Suggested Upper Temperature ");
+                  
+
+          // add a legend and customize it
+          chart.legend().enabled(true).fontSize(10).padding([10, 5, 25, 5]);
+                  
+          // add a title
+          chart.title("Hourly Average Soil Temperature");
+          chart.title().enabled(true).useHtml(true).text(
+            '<span style="color: #000000; font-size:20px;">Hourly Average Soil Temperature</span>'
+            ).padding([15,5]);
+
+          // name the axes
+          chart.yAxis().title("Temperature °C");
+          chart.xAxis().title("Time");
+
+          chart.yAxis().title("Temperature °C");
+          chart.xAxis().title("Time");
+
+          chart.yScale().minimum(0);
+          chart.yScale().maximum(30);
+
+          var labels = chart.xAxis().labels();
+          labels.fontSize(12);
+          labels.padding([5,5]);
+          labels.rotation(300)
+
+          var tags = chart.yAxis().labels();
+          tags.fontSize(12);
+
+                  
+          // specify where to display the chart
+          chart.container("container");
+                  
+          // draw the resulting chart
+          chart.draw();
+        });
+        </script>
+        <br>
+        <br>
+        <h2>General Overview</h2>
+        <strong>Overall, you can improve on the temperature of your soil, with your average temperature over the past 24 hours being
+        {{ t_avg }}°C</strong>, just equalling the recommended minimum soil temperature for crops of 10°C.
+        Soil temperature is a crucial environmental factor that significantly influences plant growth and development.
+        The recommended soil temperature range for good crop yield is typically between 10°C to 24°C.
+        This temperature range enhances the chances of promoting Seed Germination, Root Development, and Effective Disease and Pest Management amongst other factors.
+        <br>
+        <br>
+        <h2>Suggestions for Improvement</h2>
+        The average soil temperature level over the previous 24 hours indicates that the soil is underheated between hours 22:00 and 09:00 (11 hours total).
+        For assistance in dealing with low soil temperature, read <a href="https://www.growveg.com/guides/how-to-warm-soil-and-protect-seedlings-from-frost/">
+        this</a> article explaining different methods of warming up soil for crops.
+      </section>
+
+      <section>
+        <h1>
+          Expected Crop Yield (BETA)
+        </h1>
+        <br>
+        <p>
+          <h3>Expected Yields By Crop: </h3>
+          <p class="" style="margin: 25px;"></p>
+          <p class="" style="justify-content: center;align-items: center;text-align: center;font-size: 15px;color: #91b6d0;">_____________________________________</p>
+          <p class="" style="margin: 12px;"></p>
+          <h3>455 Kilograms<br></h3>
+          <p class="" style="justify-content: center;align-items: center;text-align: center;font-size: 15px;color: #91b6d0;">Wheat</p>
+        </p>
+        <p class="" style="margin: 14px;"></p>
+        <p>
+          <h3>329 Kilograms<br></h3>
+          <p class="" style="justify-content: center;align-items: center;text-align: center;font-size: 15px;color: #91b6d0;">Barley</p>
+        </p>
+        <p>
+          <h3>770 Kilograms<br></h3>
+          <p class="" style="justify-content: center;align-items: center;text-align: center;font-size: 15px;color: #91b6d0;">Potato</p>
+          <p class="" style="justify-content: center;align-items: center;text-align: center;font-size: 15px;color: #91b6d0;">_____________________________________</p>
+        </p>
+        <h2>Description</h2>
+        Using parameters such as temperature, sawn seed mass, area of production, crop height, location of soil, and various weather parameters like rainfall, and humidity, a developed
+        Machine Learning algorithm is capable of predicting the expected crop yield. The primary objective of this function is to to help farmers and agricultural industries grow and estimate crop yield.
+        Secondarily, your predicted crop yield may also be utilised as a proxy for creditworthiness to financial institutions as part of the Rabo Foundation initiative.
+      </section>
+
+      <footer>
+        HarvestHub- powered by Rabobank
+      </footer>
+    </main>
+  </div>
