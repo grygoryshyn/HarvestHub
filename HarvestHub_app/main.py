@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template, redirect, url_for, send_from_directory
-
+from datetime import datetime, date, timedelta
 
 
 # Creating the flask app to establish a connection between the HTML and the python model code
@@ -169,6 +169,10 @@ def predict():
         t_month="{}".format(df.iloc[0,57]),
         t_day="{}".format(df.iloc[0,58]),
         t_hour="{}".format(df.iloc[0,59]),
+        current_year="{}".format(datetime.now().year),
+        current_month="{}".format(datetime.now().month),
+        current_day="{}".format(datetime.now().day),
+
 
     )
 
